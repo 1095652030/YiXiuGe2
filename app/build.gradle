@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+
+
+
+    sourceSets{
+        main{
+            res.srcDirs=[
+                    'src/main/res/layouts', 'src/main/res'
+            ]
+        }
+    }
+
+
+
+
+    defaultConfig {
+        applicationId "com.zykj.yixiuge"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    testCompile 'junit:junit:4.12'
+
+    //鲁班
+    compile 'top.zibin:Luban:1.0.9'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    //butterknife
+    compile 'com.jakewharton:butterknife:7.0.1'
+    //logger
+    compile 'com.orhanobut:logger:1.15'
+    //图片选择器
+    compile 'cn.finalteam:galleryfinal:1.4.8.7'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    //  工具
+    compile 'org.xutils:xutils:3.3.40'
+    //FastJson
+    compile 'com.alibaba:fastjson:1.2.12'
+    //上拉刷新下拉加载
+    compile 'com.huxq17.xrefreshview:xrefreshview:3.6.5'
+}
